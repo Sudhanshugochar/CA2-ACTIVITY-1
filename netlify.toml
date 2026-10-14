@@ -1,0 +1,11 @@
+# Netlify configuration for Three-Tier Hospital Management System Frontend (Tier 1)
+[build]
+  base = "frontend"
+  publish = "dist"
+  command = "npm run build"
+
+# Single-Page Application routing redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
