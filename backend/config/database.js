@@ -1,4 +1,12 @@
 const mongoose = require('mongoose');
+const dns = require('dns');
+
+// Ensure reliable SRV resolution across Windows local development and cloud environments
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch (dnsErr) {
+  // Ignore if runtime restricts setServers
+}
 
 const connectDB = async () => {
   try {
