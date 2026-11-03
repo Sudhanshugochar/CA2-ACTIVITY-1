@@ -112,6 +112,49 @@ A typical patient document in the MongoDB Atlas `patients` collection contains:
 | **Stats** | `GET` | `/api/patients/stats`| Summary counts for dashboard metrics | Frontend &larr; Render &larr; MongoDB Atlas |
 | **Health** | `GET` | `/api/health` | Tier 2 status and MongoDB connection check | Monitoring & Frontend |
 
+### Claude Desktop MCP server and local Ollama assistant
+
+The project exposes hospital tools to MCP hosts such as Claude Desktop or VS Code. Claude Desktop is the agent/model in that setup; the MCP server connects it to the hospital app. The dashboard's separate assistant uses Ollama locally. Read tools return basic care-coordination fields only and omit contact details and diagnoses.
+
+1. Install and start [Ollama](https://ollama.com/download), then download the default model:
+
+   ```powershell
+   ollama pull llama3.2:3b
+   ```
+
+2. Copy `backend/.env.example` to `backend/.env` if you have not already, and configure `MONGODB_URI`. The default Ollama settings are `http://127.0.0.1:11434` and `llama3.2:3b`.
+3. Install backend dependencies and start the API:
+
+   ```powershell
+   cd backend
+   npm install
+   npm run dev
+   ```
+
+4. In Claude Desktop, add the following entry to `%APPDATA%\Claude\claude_desktop_config.json` under `mcpServers`, replacing the project path with this repository's location. Keep any other server entries already in that file. Claude Desktop can use multiple configured MCP servers in the same conversation; add each additional platform's MCP server as another entry under `mcpServers`:
+
+   ```json
+   {
+     "medipulse-hospital": {
+       "command": "C:\\Program Files\\nodejs\\node.exe",
+       "args": ["C:\\path\\to\\CA2 ACTIVITY 1\\backend\\mcp\\server.mjs"]
+     }
+   }
+   ```
+
+   Alternatively, open this repository as a VS Code workspace and start `medipulse-hospital` from the MCP server controls; its configuration is in `.vscode/mcp.json`. Both clients load database settings from `backend/.env`.
+5. Start the frontend in another terminal:
+
+   ```powershell
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+The hospital MCP server provides read tools (`hospital_get_statistics`, `hospital_search_patients`, and `hospital_get_patient`) and write tools (`hospital_create_patient`, `hospital_update_patient`, and `hospital_delete_patient`). Review and approve Claude Desktop's confirmation before every create, update, or delete; deletion is permanent. A single prompt can request changes to multiple patient records, but review each proposed write carefully. Only the hospital app is configured in this repository; configure other MCP servers separately to update additional platforms.
+
+The dashboard's **Local Hospital Assistant** continues to use Ollama and the read-only hospital tools. The MCP server uses stdio and is intended for local desktop MCP clients; it is not a public deployment endpoint. Restart Claude Desktop after changing its configuration. The assistant is for administration only, not clinical advice.
+
 ---
 
 ## 📂 5. Project Directory Structure

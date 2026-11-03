@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "medipulse-hospital": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/backend/mcp/server.mjs"]
+    }
+  }
+}

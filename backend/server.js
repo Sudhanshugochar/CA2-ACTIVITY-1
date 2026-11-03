@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+dotenv.config();
+
 const mongoose = require('mongoose');
 const connectDB = require('./config/database');
 const patientRoutes = require('./routes/patientRoutes');
-
-// Load environment variables
-dotenv.config();
+const assistantRoutes = require('./routes/assistantRoutes');
 
 // Initialize Express App
 const app = express();
@@ -70,6 +70,7 @@ app.get('/', (req, res) => {
       patients: '/api/patients',
       stats: '/api/patients/stats',
       patientById: '/api/patients/:id',
+      assistant: '/api/assistant/chat',
     },
     documentation: 'See README.md for complete three-tier architecture details.',
   });
@@ -101,6 +102,7 @@ app.get('/api/health', (req, res) => {
 
 // Mount Patient REST API Routes
 app.use('/api/patients', patientRoutes);
+app.use('/api/assistant', assistantRoutes);
 
 // 404 Route Handler
 app.use((req, res) => {

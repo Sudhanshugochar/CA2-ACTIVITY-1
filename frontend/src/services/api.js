@@ -65,6 +65,20 @@ export const apiService = {
     }
   },
 
+  async getAssistantStatus() {
+    const response = await fetch(`${getBaseUrl()}/assistant/status`);
+    return await handleResponse(response);
+  },
+
+  async chatWithAssistant(messages) {
+    const response = await fetch(`${getBaseUrl()}/assistant/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages }),
+    });
+    return await handleResponse(response);
+  },
+
   // Get statistics
   async getStats() {
     const response = await fetch(`${getBaseUrl()}/patients/stats`);

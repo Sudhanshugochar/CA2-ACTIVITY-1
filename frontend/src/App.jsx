@@ -23,6 +23,7 @@ import PatientDetailsModal from './components/PatientDetailsModal';
 import DeleteConfirmModal from './components/DeleteConfirmModal';
 import ArchitectureModal from './components/ArchitectureModal';
 import NotificationToast from './components/NotificationToast';
+import AssistantPanel from './components/AssistantPanel';
 import { apiService } from './services/api';
 
 const DEPARTMENTS = [
@@ -285,6 +286,8 @@ export default function App() {
 
         {/* Top Stats Overview */}
         <StatsCards stats={stats} loading={loading && !stats} />
+
+        <AssistantPanel />
 
         {/* Action / Control Bar */}
         <div className="control-bar">
