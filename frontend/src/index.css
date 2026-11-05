@@ -9,7 +9,7 @@
   --primary-600: #0d9488;
   --primary-700: #0f766e;
 
-  --accent-blue: #0284c7;
+  --accent-blue: #0f766e;
   --accent-indigo: #4f46e5;
 
   --bg-page: #f8fafc;
@@ -31,7 +31,7 @@
   --status-outpatient-text: #0369a1;
   --status-outpatient-border: #bae6fd;
 
-  --status-discharged-bg: #dcfce7;
+  --status-discharged-bg: #ccfbf1;
   --status-discharged-text: #166534;
   --status-discharged-border: #bbf7d0;
 
@@ -110,7 +110,7 @@ body {
 .brand-logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
   color: white;
   border-radius: var(--radius-md);
   display: flex;
@@ -163,8 +163,8 @@ body {
 }
 
 .tier-badge.mongo {
-  background: #f0fdf4;
-  color: #15803d;
+  background: #f0fdfa;
+  color: #0f766e;
   border-color: #bbf7d0;
 }
 
@@ -176,7 +176,7 @@ body {
 
 /* Architecture Flow Banner */
 .arch-banner {
-  background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(90deg, #0f172a 0%, #f0fdfa 100%);
   color: white;
   padding: 0.6rem 1rem;
   font-size: 0.8rem;
@@ -185,7 +185,7 @@ body {
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #ccfbf1;
 }
 
 .arch-step {
@@ -197,7 +197,7 @@ body {
 }
 
 .arch-arrow {
-  color: #38bdf8;
+  color: #14b8a6;
   font-weight: bold;
 }
 
@@ -262,7 +262,7 @@ body {
 }
 
 .assistant-status.ready {
-  color: #15803d;
+  color: #0f766e;
 }
 
 .assistant-status.not-ready {
@@ -309,7 +309,7 @@ body {
 }
 
 .assistant-message.assistant {
-  color: #334155;
+  color: #ccfbf1;
   background: #f1f5f9;
 }
 
@@ -339,7 +339,7 @@ body {
   padding: 0.4rem 0.6rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
-  color: #334155;
+  color: #ccfbf1;
   background: #fff;
   font-size: 0.75rem;
   cursor: pointer;
@@ -628,7 +628,7 @@ body {
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
   background: #e2e8f0;
-  color: #334155;
+  color: #ccfbf1;
   display: inline-block;
 }
 
@@ -774,7 +774,7 @@ body {
 .form-label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #334155;
+  color: #ccfbf1;
 }
 
 .form-label .req {
@@ -854,7 +854,7 @@ body {
 }
 
 .toast-info {
-  background: #1e293b;
+  background: #f0fdfa;
   color: #ffffff;
 }
 
@@ -892,7 +892,7 @@ body {
 }
 
 .api-badge.online {
-  background: #f0fdf4;
+  background: #f0fdfa;
   color: #166534;
   border-color: #86efac;
 }

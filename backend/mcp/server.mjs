@@ -10,14 +10,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const require = createRequire(import.meta.url);
-const { tools, executeTool } = require('../services/hospitalTools.js');
+const { getTools, executeTool } = require('../services/hospitalTools.js');
 
 const server = new Server(
-  { name: 'medipulse-hospital', version: '1.0.0' },
+  { name: 'medipulse-hospital', version: '2.0.0' },
   { capabilities: { tools: {} } },
 );
 
-server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools }));
+// Call getTools() fresh on every ListTools request so that
+// custom schema fields added via update_patient_schema appear immediately
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
+  tools: getTools(),
+}));
+
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
   try {
@@ -30,9 +35,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
-console.error('MediPulse MCP server connected over stdio.');
+console.error('=============================================================');
+console.error('  MediPulse MCP Server v2.0 — connected over stdio');
+console.error('  Tools: 9 total (6 patient + 3 AI-powered)');
+console.error('  change_website_theme | update_patient_schema | get_project_status');
+console.error('=============================================================');
 
+// Redirect console.log to stderr so it does not pollute the MCP stdio stream
 console.log = (...args) => console.error(...args);
+
 require('../config/database.js')().catch((error) => {
-  console.error('MediPulse MCP database connection failed:', error.message);
+  console.error('MediPulse MCP: MongoDB connection failed:', error.message);
 });

@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "name": "bloodGroup",
+      "type": "String",
+      "required": false,
+      "defaultValue": "",
+      "enumValues": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "O+",
+        "O-",
+        "AB+",
+        "AB-"
+      ],
+      "description": "Patient's blood group"
+    }
+  ]
+}

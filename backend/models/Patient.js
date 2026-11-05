@@ -68,6 +68,12 @@ const patientSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    bloodGroup: {
+      type: String,
+      enum: ["A+","A-","B+","B-","O+","O-","AB+","AB-"],
+      default: '',
+      trim: true,
+    },
   },
   {
     timestamps: true,
