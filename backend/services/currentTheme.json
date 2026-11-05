@@ -1,16 +1,16 @@
 {
-  "name": "teal",
-  "--primary-50": "#f0fdfa",
-  "--primary-100": "#ccfbf1",
-  "--primary-500": "#14b8a6",
-  "--primary-600": "#0d9488",
-  "--primary-700": "#0f766e",
-  "--border-focus": "#14b8a6",
+  "name": "blue",
+  "--primary-50": "#eff6ff",
+  "--primary-100": "#dbeafe",
+  "--primary-500": "#3b82f6",
+  "--primary-600": "#2563eb",
+  "--primary-700": "#1d4ed8",
+  "--border-focus": "#3b82f6",
   "--bg-page": "#f8fafc",
   "--bg-surface": "#ffffff",
-  "--bg-subtle": "#f1f5f9",
+  "--bg-subtle": "#eff6ff",
   "--text-main": "#0f172a",
   "--text-muted": "#64748b",
   "--text-subtle": "#94a3b8",
-  "--border-color": "#e2e8f0"
+  "--border-color": "#bfdbfe"
 }

@@ -3,25 +3,25 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Medical Theme Colors */
-  --primary-50: #f0fdfa;
-  --primary-100: #ccfbf1;
-  --primary-500: #14b8a6;
-  --primary-600: #0d9488;
-  --primary-700: #0f766e;
+  --primary-50: #eff6ff;
+  --primary-100: #dbeafe;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+  --primary-700: #1d4ed8;
 
-  --accent-blue: #0f766e;
+  --accent-blue: #1d4ed8;
   --accent-indigo: #4f46e5;
 
   --bg-page: #f8fafc;
   --bg-surface: #ffffff;
-  --bg-subtle: #f1f5f9;
+  --bg-subtle: #eff6ff;
 
   --text-main: #0f172a;
   --text-muted: #64748b;
   --text-subtle: #94a3b8;
 
-  --border-color: #e2e8f0;
-  --border-focus: #14b8a6;
+  --border-color: #bfdbfe;
+  --border-focus: #3b82f6;
 
   --status-admitted-bg: #fef3c7;
   --status-admitted-text: #92400e;
@@ -31,13 +31,13 @@
   --status-outpatient-text: #0369a1;
   --status-outpatient-border: #bae6fd;
 
-  --status-discharged-bg: #ccfbf1;
+  --status-discharged-bg: #dbeafe;
   --status-discharged-text: #166534;
   --status-discharged-border: #bbf7d0;
 
-  --danger-bg: #fee2e2;
-  --danger-text: #b91c1c;
-  --danger-btn: #ef4444;
+  --danger-bg: #dbeafe;
+  --danger-text: #1d4ed8;
+  --danger-btn: #3b82f6;
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -110,7 +110,7 @@ body {
 .brand-logo-icon {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
   border-radius: var(--radius-md);
   display: flex;
@@ -163,8 +163,8 @@ body {
 }
 
 .tier-badge.mongo {
-  background: #f0fdfa;
-  color: #0f766e;
+  background: #eff6ff;
+  color: #1d4ed8;
   border-color: #bbf7d0;
 }
 
@@ -176,7 +176,7 @@ body {
 
 /* Architecture Flow Banner */
 .arch-banner {
-  background: linear-gradient(90deg, #0f172a 0%, #f0fdfa 100%);
+  background: linear-gradient(90deg, #0f172a 0%, #eff6ff 100%);
   color: white;
   padding: 0.6rem 1rem;
   font-size: 0.8rem;
@@ -185,7 +185,7 @@ body {
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ccfbf1;
+  border-bottom: 1px solid #dbeafe;
 }
 
 .arch-step {
@@ -197,7 +197,7 @@ body {
 }
 
 .arch-arrow {
-  color: #14b8a6;
+  color: #3b82f6;
   font-weight: bold;
 }
 
@@ -240,7 +240,7 @@ body {
   height: 38px;
   display: grid;
   place-items: center;
-  color: #0f766e;
+  color: #1d4ed8;
   background: var(--primary-50);
   border-radius: var(--radius-md);
 }
@@ -262,7 +262,7 @@ body {
 }
 
 .assistant-status.ready {
-  color: #0f766e;
+  color: #1d4ed8;
 }
 
 .assistant-status.not-ready {
@@ -285,7 +285,7 @@ body {
 
 .assistant-error {
   color: #991b1b;
-  background: #fef2f2;
+  background: #eff6ff;
   border: 1px solid #fecaca;
 }
 
@@ -309,14 +309,14 @@ body {
 }
 
 .assistant-message.assistant {
-  color: #ccfbf1;
+  color: #dbeafe;
   background: #f1f5f9;
 }
 
 .assistant-message.user {
   align-self: flex-end;
   color: #fff;
-  background: #0d9488;
+  background: #2563eb;
 }
 
 .assistant-message.pending {
@@ -339,7 +339,7 @@ body {
   padding: 0.4rem 0.6rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
-  color: #ccfbf1;
+  color: #dbeafe;
   background: #fff;
   font-size: 0.75rem;
   cursor: pointer;
@@ -537,7 +537,7 @@ body {
 }
 
 .btn-danger:hover {
-  background: #dc2626;
+  background: #2563eb;
 }
 
 .btn-icon {
@@ -628,7 +628,7 @@ body {
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
   background: #e2e8f0;
-  color: #ccfbf1;
+  color: #dbeafe;
   display: inline-block;
 }
 
@@ -774,11 +774,11 @@ body {
 .form-label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #ccfbf1;
+  color: #dbeafe;
 }
 
 .form-label .req {
-  color: #ef4444;
+  color: #3b82f6;
   margin-left: 2px;
 }
 
@@ -854,7 +854,7 @@ body {
 }
 
 .toast-info {
-  background: #f0fdfa;
+  background: #eff6ff;
   color: #ffffff;
 }
 
@@ -892,13 +892,13 @@ body {
 }
 
 .api-badge.online {
-  background: #f0fdfa;
+  background: #eff6ff;
   color: #166534;
   border-color: #86efac;
 }
 
 .api-badge.offline {
-  background: #fef2f2;
+  background: #eff6ff;
   color: #991b1b;
   border-color: #fca5a5;
 }
